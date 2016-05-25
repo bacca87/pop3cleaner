@@ -1,12 +1,12 @@
 ﻿using OpenPop.Common.Logging;
 
-namespace Pop3Eraser
+namespace Pop3Cleaner
 {
-    class POP3EraserLogger : ILog
+    class POP3CleanerLogger : ILog
     {
         IOutput output;
         
-        public POP3EraserLogger(IOutput output)
+        public POP3CleanerLogger(IOutput output)
         {
             this.output = output;
         }

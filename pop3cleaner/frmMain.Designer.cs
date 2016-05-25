@@ -1,4 +1,4 @@
-﻿namespace Pop3Eraser
+﻿namespace Pop3Cleaner
 {
     partial class frmMain
     {
@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMain));
             this.btnDelete = new System.Windows.Forms.Button();
             this.txtAddress = new System.Windows.Forms.TextBox();
             this.lblAddress = new System.Windows.Forms.Label();
@@ -361,6 +362,7 @@
             this.aboutToolStripMenuItem1.Name = "aboutToolStripMenuItem1";
             this.aboutToolStripMenuItem1.Size = new System.Drawing.Size(107, 22);
             this.aboutToolStripMenuItem1.Text = "About";
+            this.aboutToolStripMenuItem1.Click += new System.EventHandler(this.aboutToolStripMenuItem1_Click);
             // 
             // btnTest
             // 
@@ -390,10 +392,11 @@
             this.Controls.Add(this.gbOutput);
             this.Controls.Add(this.mainMenu);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.mainMenu;
             this.MaximizeBox = false;
             this.Name = "frmMain";
-            this.Text = "POP3 Email Eraser";
+            this.Text = "POP3 Email Cleaner";
             ((System.ComponentModel.ISupportInitialize)(this.nPort)).EndInit();
             this.gbOutput.ResumeLayout(false);
             this.tabLogs.ResumeLayout(false);

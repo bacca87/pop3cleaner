@@ -4,7 +4,7 @@ using OpenPop.Pop3;
 using OpenPop.Common.Logging;
 using System.Threading;
 
-namespace Pop3Eraser
+namespace Pop3Cleaner
 {
     public partial class frmMain : Form, IOutput
     {
@@ -16,7 +16,7 @@ namespace Pop3Eraser
         {
             InitializeComponent();
 
-            POP3EraserLogger log = new POP3EraserLogger(this);
+            POP3CleanerLogger log = new POP3CleanerLogger(this);
             DefaultLogger.SetLog(log);
 
             cmbAuthMethod.SelectedIndex = 2;
@@ -183,6 +183,12 @@ namespace Pop3Eraser
         {
             txtLogGeneral.ScrollToCaret();
             txtLogPop3.ScrollToCaret();
+        }
+
+        private void aboutToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            AboutBox about = new AboutBox();            
+            about.ShowDialog();
         }
     }
 }

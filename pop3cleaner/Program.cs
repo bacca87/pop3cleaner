@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
 
-namespace Pop3Eraser
+namespace Pop3Cleaner
 {
     static class Program
     {

@@ -1,9 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
-VisualStudioVersion = 14.0.23107.0
+VisualStudioVersion = 14.0.25123.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "POP3Eraser", "pop3eraser\POP3Eraser.csproj", "{B9ABDE33-5862-4AD7-8482-EB6C88EE2753}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "POP3Cleaner", "pop3cleaner\POP3cleaner.csproj", "{B9ABDE33-5862-4AD7-8482-EB6C88EE2753}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

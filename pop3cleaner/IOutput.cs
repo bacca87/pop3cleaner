@@ -1,4 +1,4 @@
-﻿namespace Pop3Eraser
+﻿namespace Pop3Cleaner
 {
     interface IOutput
     {
