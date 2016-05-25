@@ -52,6 +52,10 @@ namespace Pop3Cleaner
                 }
             }
             catch { }
+            finally
+            {
+                Application.UseWaitCursor = false;
+            }
         }
 
         #region IOutput Methods
@@ -112,8 +116,11 @@ namespace Pop3Cleaner
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            if (!currentThread.IsAlive && checkInputs())
+            if (!currentThread.IsAlive)
             {
+                if (!checkInputs())
+                    return;
+
                 currentThread = new Thread(ExecuteThread);
                 currentThread.IsBackground = true;
 
@@ -124,13 +131,19 @@ namespace Pop3Cleaner
                 progressBar.Value = 0;
                 authMethod = (AuthenticationMethod)cmbAuthMethod.SelectedIndex; //hack for getting the auth method from a separate thread
                 currentThread.Start();
+                Application.UseWaitCursor = true;
             }
+            else
+                MessageBox.Show("Please wait until current operation is finished...", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void btnTest_Click(object sender, EventArgs e)
         {
-            if (!currentThread.IsAlive && checkInputs())
+            if (!currentThread.IsAlive)
             {
+                if (!checkInputs())
+                    return;
+
                 currentThread = new Thread(ExecuteThread);
                 currentThread.IsBackground = true;
 
@@ -138,7 +151,10 @@ namespace Pop3Cleaner
                 progressBar.Value = 0;
                 authMethod = (AuthenticationMethod)cmbAuthMethod.SelectedIndex; //hack for getting the auth method from a separate thread
                 currentThread.Start();
+                Application.UseWaitCursor = true;
             }
+            else
+                MessageBox.Show("Please wait until current operation is finished...", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void chkSSL_CheckedChanged(object sender, EventArgs e)
